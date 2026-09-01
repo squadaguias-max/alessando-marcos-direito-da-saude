@@ -8,9 +8,7 @@ export const templateConfig = {
   },
   contact: {
     whatsapp: "5521971503548",
-    whatsappSecondary: "5522988353497",
     phoneLabel: "(21) 97150-3548",
-    phoneSecondaryLabel: "(22) 98835-3497",
     email: "alessandromarcusgoncalves@gmail.com",
     instagram: "https://www.instagram.com/amgoncalvesadvogados/",
     facebook: "https://www.facebook.com/amgoncalvesadvogados",
@@ -23,7 +21,6 @@ export const templateConfig = {
   },
 };
 
-export function whatsappUrl(message = "Olá! Recebi uma negativa de tratamento e gostaria de analisar meu caso.", secondary = false) {
-  const number = secondary ? templateConfig.contact.whatsappSecondary : templateConfig.contact.whatsapp;
-  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+export function whatsappUrl(message = "Olá! Recebi uma negativa de tratamento e gostaria de analisar meu caso.") {
+  return `https://wa.me/${templateConfig.contact.whatsapp}?text=${encodeURIComponent(message)}`;
 }
